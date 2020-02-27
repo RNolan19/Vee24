@@ -1,7 +1,7 @@
 let apiUrl
 const apiUrls = {
-  production: 'https://aqueous-atoll-85096.herokuapp.com',
-  development: 'http://localhost:4741'
+  production: 'https://itunes.apple.com/us/rss/topalbums/limit=100/json',
+  development: 'https://itunes.apple.com/us/rss/topalbums/limit=100/json'
 }
 
 if (window.location.hostname === 'localhost') {
