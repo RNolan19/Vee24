@@ -1,7 +1,7 @@
 import React from 'react'
 import apiUrl from '../apiConfig'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 class ListAlbums extends React.Component {
   constructor () {
@@ -29,11 +29,23 @@ class ListAlbums extends React.Component {
     if (this.state.albums.length === 0) {
       movieJsx = 'Loading...'
     } else {
-      movieJsx = this.state.albums.map(album => (
-        <li key={album.title['label']}>
-          <Link to={`/movies/${album.title['label']}`}>{album.title['label']}</Link>
-        </li>
-      ))
+      movieJsx = this.state.albums.map(album =>
+        (
+          <div className="container" key={album.title['label']}>
+            <div className="flex-items">
+              <img src={album['im:image'][0]['label']} />
+              { /* <li className="album-cover" key={album.title['label']}>
+                <Link to={`/movies/${album.title['label']}`}>{album['im:name'].label}</Link>
+              </li>
+
+                <p>by: {album['im:artist'].label}</p>
+              <p>{album['im:price'].label}</p>
+              <p>Release Date: {album['im:releaseDate'].attributes.label}</p> */}
+            </div>
+          </div>
+        )
+      )
+      console.log(this.state.albums[0]['im:image'][0]['label'])
     }
 
     return (
