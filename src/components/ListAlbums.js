@@ -1,7 +1,7 @@
 import React from 'react'
 import apiUrl from '../apiConfig'
 import axios from 'axios'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 class ListAlbums extends React.Component {
   constructor () {
@@ -31,13 +31,12 @@ class ListAlbums extends React.Component {
     } else {
       movieJsx = this.state.albums.map(album =>
         (
-          <div className="container" key={album.title['label']}>
-            <div className="flex-items">
-              <img src={album['im:image'][0]['label']} />
+          <div className="container" key={album.title['label']} sm={6} md={4}>
+            <div key={album.title['label']}>
+              <Link to={`/album/${album.id.attributes['im:id']}`}><img className="flex-items" src={album['im:image'][0]['label']}/> </Link>
               { /* <li className="album-cover" key={album.title['label']}>
-                <Link to={`/movies/${album.title['label']}`}>{album['im:name'].label}</Link>
               </li>
-
+                <Link to={`/album/${album.id.attributes['im:id']}`}>{album['im:name'].label}</Link>
                 <p>by: {album['im:artist'].label}</p>
               <p>{album['im:price'].label}</p>
               <p>Release Date: {album['im:releaseDate'].attributes.label}</p> */}

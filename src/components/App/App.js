@@ -10,8 +10,8 @@ class App extends React.Component {
     return (
       <div>
         <Header />
+        <Route path="/album/:id/" component={Album}/>
         <Route exact path="/" component={Home}/>
-        <Route exact path="/movies/:id" component={Album}/>
         <Route exact path="/list" component={ListAlbums} />
       </div>
     )
