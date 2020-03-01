@@ -1,11 +1,35 @@
 @import '~bootstrap/scss/bootstrap';
 
-.container {
-  border: 2px blue solid;
-  display: flex;
+.body {
+  background-color: #C5EAFA;
+}
 
+.container {
+  align-items: center;
+  border: 20px white solid;
+  // background-color: yellow;
+  display: inline-flex;
+  // height: 100vh;
+  justify-content: center;
+  // flex-direction: column;
+  // flex-wrap: wrap;
+  margin: 2%;
+  // margin-right: 0.1%;
+  // how to determine the width of the container.  This will take up 20% of the width of the screen
+  // this would ordinarilly get 5 items on the screen w/o a margin
+  // with a margin, can only fit 4
+  width: 20.3%;
 }
 
 .flex-items {
-  border: 2px red solid;
+  // border: 2px red solid;
+  // give the flex items, the height and width
+  // flex-grow: 1;
+  // flex: 1;
+  height: 250px;
+  width: 300px;
+}
+
+.header-text {
+  text-align: center;
 }

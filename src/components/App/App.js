@@ -8,7 +8,7 @@ import Album from '../Album'
 class App extends React.Component {
   render () {
     return (
-      <div>
+      <div className="body">
         <Header />
         <Route path="/album/:id/" component={Album}/>
         <Route exact path="/" component={Home}/>
