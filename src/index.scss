@@ -6,9 +6,10 @@
 
 .container {
   align-items: center;
-  border: 20px white solid;
+  // border: 20px white solid;
+  border-radius: 2rem;
   // background-color: yellow;
-  display: inline-flex;
+  display: inline-block;
   // height: 100vh;
   justify-content: center;
   // flex-direction: column;
@@ -23,6 +24,9 @@
 
 .flex-items {
   // border: 2px red solid;
+  border: 12px white solid;
+  border-radius: 2rem;
+  box-shadow: 10px 10px grey;
   // give the flex items, the height and width
   // flex-grow: 1;
   // flex: 1;
@@ -30,6 +34,38 @@
   width: 300px;
 }
 
+.album-name {
+  display: block;
+  width: 300px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 .header-text {
+  color: #8D021F;
+  font-size: 22px;
   text-align: center;
 }
+
+.nav {
+  // font-family: 'Playfair Display SC';
+  font-family: 'Libre Baskerville';
+  text-align: center;
+}
+
+.numbers {
+  color: #8D021F;
+  font-family: 'Playfair Display SC';
+  font-size: 100px;
+  text-shadow: 6px 6px white;
+  // border: 10px solid white;
+}
+
+//
+// .nav {
+//   border: 3px solid white;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-around;
+// }

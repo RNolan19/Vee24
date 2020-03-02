@@ -1,7 +1,8 @@
 import React from 'react'
 import apiUrl from '../apiConfig'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
+import Button from 'react-bootstrap/Button'
 
 class ListAlbums extends React.Component {
   constructor () {
@@ -25,6 +26,8 @@ class ListAlbums extends React.Component {
   }
 
   render () {
+    let count = 1
+
     let movieJsx = ''
     if (this.state.albums.length === 0) {
       movieJsx = 'Loading...'
@@ -32,13 +35,16 @@ class ListAlbums extends React.Component {
       movieJsx = this.state.albums.map(album =>
         (
           <div className="container" key={album.title['label']} sm={6} md={4}>
-            <Link to={`/album/${album.id.attributes['im:id']}`}><img className="flex-items" src={album['im:image'][0]['label']}/> </Link>
-            { /* <li className="album-cover" key={album.title['label']}>
-              </li>
-                <Link to={`/album/${album.id.attributes['im:id']}`}>{album['im:name'].label}</Link>
-                <p>by: {album['im:artist'].label}</p>
-              <p>{album['im:price'].label}</p>
-              <p>Release Date: {album['im:releaseDate'].attributes.label}</p> */}
+            { /* Every album is an object. This basically says, does the object have data? If so add a 1 to the counter */}
+            <p className="numbers"><strong>{Object.entries ? count++ : console.log('nothing there')}</strong></p>
+            <img className="flex-items" src={album['im:image'][0]['label']}/>
+            <li className="album-cover" key={album.title['label']}></li>
+            <a href={`${album.id.label}`} target="_blank" rel="noopener noreferrer" ><strong className="album-name">{album['im:name'].label}</strong></a>
+            <p><strong>by: {album['im:artist'].label}</strong></p>
+            {/* <p><strong>Tracks: {album['im:itemCount'].label}</strong></p> */}
+            <p><strong>{album['im:price'].label}</strong></p>
+            <Button href= {`${album.id.label}`} target="_blank">Buy On iTunes</Button>
+            { /* <p>Release Date: {album['im:releaseDate'].attributes.label}</p> */}
           </div>
         )
       )
@@ -48,8 +54,8 @@ class ListAlbums extends React.Component {
     return (
       <div className="header-text">
         <br></br>
-        <h1>Top 100 Albums Go Here!</h1>
-        <br></br>
+        <p>The top 100 most popular and best selling hit albums downloaded on iTunes today. The chart of the current top 100 albums in the USA on iTunes
+          is updated hourly.</p>
         <ul>
           {movieJsx}
         </ul>
