@@ -10,5 +10,5 @@
 * React-Bootstrap
 
 Home Page Screenshots:
-![](https://imgur.com/gQ2V4UT)
-![](https://imgur.com/a/xKyBcu4)
+! [Screenshot #1] (https://imgur.com/gQ2V4UT)
+! [Screenshot #2] (https://imgur.com/a/xKyBcu4)
