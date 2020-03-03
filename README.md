@@ -9,5 +9,6 @@
 * CSS
 * React-Bootstrap
 
-Final Home Page Screenshot:
-![Final Home Page](https://imgur.com/a/pkmTrXi)
+Home Page Screenshots:
+![](https://imgur.com/gQ2V4UT)
+![](https://imgur.com/a/xKyBcu4)
