@@ -16,10 +16,7 @@ class ListAlbums extends React.Component {
   componentDidMount () {
     axios(apiUrl)
       .then(res => {
-      // console.log res to see the response data
         console.log(res.data.feed.entry)
-        // setState is just a React variable
-        // Update state with the movie ResponseData
         this.setState({ albums: res.data.feed.entry })
       })
       .catch(console.error)
@@ -38,9 +35,9 @@ class ListAlbums extends React.Component {
             { /* Every album is an object. This basically says, does the object have data? If so add a 1 to the counter */}
             <p className="numbers"><strong>{Object.entries ? count++ : console.log('nothing there')}</strong></p>
             <img className="flex-items" src={album['im:image'][0]['label']}/>
-            <li className="album-cover" key={album.title['label']}></li>
+            <hr></hr>
             <a href={`${album.id.label}`} target="_blank" rel="noopener noreferrer" ><strong className="album-name">{album['im:name'].label}</strong></a>
-            <p><strong>by: {album['im:artist'].label}</strong></p>
+            <p className="artists"><strong>by: {album['im:artist'].label}</strong></p>
             {/* <p><strong>Tracks: {album['im:itemCount'].label}</strong></p> */}
             <p><strong>{album['im:price'].label}</strong></p>
             <Button href= {`${album.id.label}`} target="_blank">Buy On iTunes</Button>
@@ -54,8 +51,7 @@ class ListAlbums extends React.Component {
     return (
       <div className="header-text">
         <br></br>
-        <p>The top 100 most popular and best selling hit albums downloaded on iTunes today. The chart of the current top 100 albums in the USA on iTunes
-          is updated hourly.</p>
+        <p>The top 100 most popular and best selling hit albums downloaded on iTunes today.</p>
         <ul>
           {movieJsx}
         </ul>

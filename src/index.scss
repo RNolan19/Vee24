@@ -42,30 +42,32 @@
   text-overflow: ellipsis;
 }
 
+.artists {
+  display: block;
+  width: 300px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 .header-text {
   color: #8D021F;
-  font-size: 22px;
+  font-size: 30px;
   text-align: center;
 }
 
 .nav {
   // font-family: 'Playfair Display SC';
   font-family: 'Libre Baskerville';
+  font-size: 3em;
+  font-weight: bold;
   text-align: center;
 }
 
 .numbers {
   color: #8D021F;
   font-family: 'Playfair Display SC';
-  font-size: 100px;
+  font-size: 80px;
   text-shadow: 6px 6px white;
   // border: 10px solid white;
 }
-
-//
-// .nav {
-//   border: 3px solid white;
-//   display: flex;
-//   flex-direction: row;
-//   justify-content: space-around;
-// }
